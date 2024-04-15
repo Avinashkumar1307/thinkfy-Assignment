@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 import Dashboard from "./Dashboard";
 import Slider from "./Slider";
 import { useEffect, useState } from "react";
@@ -30,7 +30,7 @@ function App() {
           <Dashboard isenble={isenble} setIsenble={setIsenble} creative={creative} colors={colors}/>
         </div>
         <div className="slider">
-          {isenble && <Slider creative={creative} setCreative={setCreative} colors={colors}/>}
+          {isenble && <Slider creative={creative} setCreative={setCreative} colors={colors} isenble={isenble} setIsenble={setIsenble}/>}
         </div>
       </div>
     </>

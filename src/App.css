@@ -51,6 +51,7 @@
 .slider {
   width: 100%;
   grid-template-columns: auto 1fr;
+  transition: width 0.3s ease-out;
 }
 .left-panel {
    /* Take up remaining space */

@@ -8,7 +8,7 @@ export default function Dashboard(props) {
     }
     
     return (
-        <div className={props.isenble ? 'scroll' : ''}>
+        <div className={props.isenble ? 'scroll' : 'original'}>
             <h2 className='heading'>Filter By</h2>
             <div className='container'>
                 <div className='left'>
