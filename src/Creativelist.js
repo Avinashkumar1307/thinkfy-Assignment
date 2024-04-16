@@ -1,13 +1,19 @@
 import React from 'react';
 import './Creativelist.css'
-export default function CreativeList({ creative }) {
+
+export default function CreativeList({ creative, selectedColor, title }) {
+    const filteredCreative = creative.filter(item => 
+        item.backgroundColor.toLowerCase().includes(selectedColor.toLowerCase()) && 
+        (item.title.toLowerCase().includes(title.toLowerCase()) || item.subtitle.toLowerCase().includes(title.toLowerCase()))
+    );
+
     return (
         <div className='card'>
-            {Object.keys(creative).map((key) => (
-                <div key={key} style={{ backgroundColor: creative[key].backgroundColor }} className='con'>
-                    <h3>{creative[key].title}</h3>
-                    <hr></hr>
-                    <h4>{creative[key].subtitle}</h4>
+            {filteredCreative.map((item, index) => (
+                <div key={index} style={{ backgroundColor: item.backgroundColor }} className='con'>
+                    <h3>{item.title}</h3>
+                    <hr />
+                    <h4>{item.subtitle}</h4>
                 </div>
             ))}
         </div>
